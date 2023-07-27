@@ -70,7 +70,7 @@ export class ProductList extends Component {
                 this.setState({ showModal: true, alertMessage: 'Product added successfully.', alertTextColor: '' });
                 this.refreshList();
             }, (error) => {                
-                this.setState({ showModal: true, alertMessage: 'Product add failed!', alertTextColor: '' });
+                this.setState({ showModal: true, alertMessage: 'Product add failed!', alertTextColor: 'red' });
             })
         this.handleCloseCreate();
     };
@@ -121,7 +121,7 @@ export class ProductList extends Component {
 
         
         $.ajax({
-            url: 'https://localhost:7063/api/products/' + selectedProductId,
+            url: '/api/products/' + selectedProductId,
             type: 'PUT',
             accept: 'application/json',
             contentType: 'application/json',
@@ -172,7 +172,7 @@ export class ProductList extends Component {
         } else {
 
             $.ajax({
-                url: 'https://localhost:7063/api/products/' + selectedProductId,
+                url: '/api/products/' + selectedProductId,
                 type: 'DELETE',
                 accept: 'application/json',
                 contentType: 'application/json',

@@ -163,7 +163,7 @@ export class SaleList extends Component {
         };
 
         $.ajax({
-            url: 'https://localhost:7063/api/sales/' + selectedSaleId,
+            url: '/api/sales/' + selectedSaleId,
             type: 'PUT',
             accept: 'application/json',
             contentType: 'application/json',
@@ -206,7 +206,7 @@ export class SaleList extends Component {
         const { selectedSaleId } = this.state;
 
         $.ajax({
-            url: 'https://localhost:7063/api/sales/' + selectedSaleId,
+            url: '/api/sales/' + selectedSaleId,
             type: 'DELETE',
             accept: 'application/json',
             contentType: 'application/json',
@@ -217,7 +217,7 @@ export class SaleList extends Component {
                 this.refreshList();
             },
             error: (error) => {                
-                this.setState({ showModal: true, alertMessage: 'Sale delete failed!', alertTextColor: '' });                
+                this.setState({ showModal: true, alertMessage: 'Sale delete failed!', alertTextColor: 'red' });                
             },
         })
         this.handleCloseDelete();

@@ -114,7 +114,7 @@ export class CustomerList extends Component {
         };
 
         $.ajax({
-            url: 'https://localhost:7063/api/customers/' + selectedCustomerId,
+            url: '/api/customers/' + selectedCustomerId,
             type: 'PUT',
             accept: 'application/json',
             contentType: 'application/json',
@@ -169,7 +169,7 @@ export class CustomerList extends Component {
         } else {
 
             $.ajax({
-                url: 'https://localhost:7063/api/customers/' + selectedCustomerId,
+                url: '/api/customers/' + selectedCustomerId,
                 type: 'DELETE',
                 accept: 'application/json',
                 contentType: 'application/json',
@@ -180,7 +180,7 @@ export class CustomerList extends Component {
                     this.refreshList();
                 },
                 error: (error) => {                    
-                    this.setState({ showModal: true, alertMessage: 'Customer delete failed!', alertTextColor: '' });                    
+                    this.setState({ showModal: true, alertMessage: 'Customer delete failed!', alertTextColor: 'red' });                    
                 },
             })
         }

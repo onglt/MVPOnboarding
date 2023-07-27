@@ -114,7 +114,7 @@ export class StoreList extends Component {
         };
 
         $.ajax({
-            url: 'https://localhost:7063/api/stores/' + selectedStoreId,
+            url: '/api/stores/' + selectedStoreId,
             type: 'PUT',
             accept: 'application/json',
             contentType: 'application/json',
@@ -165,7 +165,7 @@ export class StoreList extends Component {
         } else {
 
             $.ajax({
-                url: 'https://localhost:7063/api/stores/' + selectedStoreId,
+                url: '/api/stores/' + selectedStoreId,
                 type: 'DELETE',
                 accept: 'application/json',
                 contentType: 'application/json',
